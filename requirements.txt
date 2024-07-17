@@ -1,0 +1,13 @@
+Streamlit is a Python library that makes it easier to build interactive web applications.
+It provides a user-friendly interface that allows users to enter their symptoms and
+receive advice.
+
+2. Transformers: Developed by Hugging Face, this library provides pre-trained models
+for a variety of NLP tasks. In this chatbot, the pipeline function is used for text
+classification and translation, with models such as distilbert-base-uncased for
+symptom classification and Helsinki-NLP/opus-mt-en-ROMANCE for translating
+advice into multiple languages.
+  
+3. Googletrans is a Python library that interfaces with Google Translate. This is used to
+translate user inputs and chatbot responses so that they are accessible across
+multiple languages.
