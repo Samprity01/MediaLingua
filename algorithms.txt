@@ -1,0 +1,57 @@
+1. Import Required Libraries
+● Import necessary libraries:
+Streamlit for the web app interface.
+Transformers for text classification and translation pipelines.
+Random for random functionalities (if applicable).
+Googletrans provides translation services.
+
+2. Initialize Pipelines
+● Text Classification Pipeline: Load a pre-trained model
+(distilbert-base-uncased) to classify user input.
+● Translation Pipeline: Load a translation model
+(Helsinki-NLP/opus-mt-en-ROMANCE) to support translation between English
+and Romance languages.
+
+3. Define Supported Languages
+Create a dictionary of supported languages with corresponding language
+supported_languages = {
+"en": "English",
+"es": "Spanish",
+"fr": "French",
+"de": "German",
+"it": "Italian"
+}
+
+4. Health Advice Function (get_health_advice)
+● Input: Symptoms entered by the user, and language selected.
+● Symptoms Keyword Dictionary: Create a dictionary that maps common symptoms
+(such as fever and cough) to language-specific advice messages.
+● Keyword Matching: Iterate through the symptoms to see if they appear in the user
+input.
+If a symptom matches, return the appropriate advice in the specified language.
+If no symptoms match, return the default message requesting more information.
+
+5. Translation Function (translate_text)
+● Inputs include the text to be translated and the target language.
+● If the target language is English, please return the original text.
+● Use the translation pipeline to convert the text into the desired target language.
+
+6. Explanation Function (explain_advice)
+● Input: Symptom and language.
+● Explanations Dictionary: Create a dictionary that links symptoms to
+explanations in multiple languages.
+● Retrieve the explanation corresponding to the matched symptom and return it
+in the specified language.
+●
+
+7. Streamlit User Interface (main function)
+● Set the title of the web application.
+● Provide a dropdown menu for language selection.
+● Accept user input via a text input field for symptom description.
+● If the "Get Advice" button is clicked:
+Call get_health_advice with user input and selected language,
+displaying the returned advice.
+For each predefined symptom (fever, cough, headache, mental illness):
+If the symptom is present in the user input, call explain_advice to retrieve and
+display an explanation.
+Thank the user and prompt for further assistance.
